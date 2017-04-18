@@ -1,0 +1,515 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/bigluck/sqs-queue-parallel">sqs-queue-parallel (v0.1.6)</a>
+</h1>
+<h4>Create a poll of Amazon SQS queue watchers and each one can receive 1+ messages</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sqs-queue-parallel">module sqs-queue-parallel</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">sqs-queue-parallel.</span>usingDomains</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sqs-queue-parallel.sqs-queue-parallel">
+            function <span class="apidocSignatureSpan"></span>sqs-queue-parallel
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sqs-queue-parallel.EventEmitter">
+            function <span class="apidocSignatureSpan">sqs-queue-parallel.</span>EventEmitter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sqs-queue-parallel.configure">
+            function <span class="apidocSignatureSpan">sqs-queue-parallel.</span>configure
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sqs-queue-parallel.init">
+            function <span class="apidocSignatureSpan">sqs-queue-parallel.</span>init
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sqs-queue-parallel.listenerCount">
+            function <span class="apidocSignatureSpan">sqs-queue-parallel.</span>listenerCount
+            <span class="apidocSignatureSpan">(emitter, type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sqs-queue-parallel.toString">
+            function <span class="apidocSignatureSpan">sqs-queue-parallel.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">sqs-queue-parallel.</span>defaultMaxListeners</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sqs-queue-parallel.</span>__super__</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sqs-queue-parallel.configure">module sqs-queue-parallel.configure</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sqs-queue-parallel.configure.configure">
+            function <span class="apidocSignatureSpan">sqs-queue-parallel.</span>configure
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sqs-queue-parallel.init">module sqs-queue-parallel.init</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sqs-queue-parallel.init.init">
+            function <span class="apidocSignatureSpan">sqs-queue-parallel.</span>init
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sqs-queue-parallel.listenerCount">module sqs-queue-parallel.listenerCount</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sqs-queue-parallel.listenerCount.listenerCount">
+            function <span class="apidocSignatureSpan">sqs-queue-parallel.</span>listenerCount
+            <span class="apidocSignatureSpan">(emitter, type)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sqs-queue-parallel.toString">module sqs-queue-parallel.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sqs-queue-parallel.toString.toString">
+            function <span class="apidocSignatureSpan">sqs-queue-parallel.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sqs-queue-parallel" id="apidoc.module.sqs-queue-parallel">module sqs-queue-parallel</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.sqs-queue-parallel.sqs-queue-parallel" id="apidoc.element.sqs-queue-parallel.sqs-queue-parallel">
+        function <span class="apidocSignatureSpan"></span>sqs-queue-parallel
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SqsQueueParallel(config) {
+  var readQueue, self;
+  if (config == null) {
+    config = {};
+  }
+  this.config = _.extend({
+    region: process.env.AWS_REGION,
+    accessKeyId: process.env.AWS_ACCESS_KEY,
+    secretAccessKey: process.env.AWS_SECRET_KEY,
+    visibilityTimeout: null,
+    waitTimeSeconds: 20,
+    maxNumberOfMessages: 1,
+    name: '',
+    concurrency: 1,
+    debug: false
+  }, globalConfig, config);
+  this.client = null;
+  this.url = null;
+  self = this;
+  readQueue = function(index) {
+    if (!(self.listeners("message").length &amp;&amp; self.url)) {
+      return;
+    }
+    return async.waterfall([
+      function(next) {
+        var options;
+        if (self.config.debug) {
+          console.log("SqsQueueParallel " + self.config.name + "[" + index + "]: waiting messages");
+        }
+        return self.client.receiveMessage((options = {
+          QueueUrl: self.url,
+          AttributeNames: ["All"],
+          MaxNumberOfMessages: self.config.maxNumberOfMessages,
+          WaitTimeSeconds: self.config.waitTimeSeconds
+        }, self.config.visibilityTimeout != null ? options.VisibilityTimeout = self.config.visibilityTimeout : void 0, options),
+next);
+      }, function(queue, next) {
+        var _ref;
+        if (!((_ref = queue.Messages) != null ? _ref[0] : void 0)) {
+          return next(null);
+        }
+        if (self.config.debug) {
+          console.log("SqsQueueParallel " + self.config.name + "[" + index + "]: " + queue.Messages.length + " new messages");
+        }
+        return async.eachSeries(queue.Messages, function(message, next) {
+          return self.emit("message", {
+            type: 'message',
+            data: JSON.parse(message.Body) || message.Body,
+            message: message,
+            metadata: queue.ResponseMetadata,
+            url: self.url,
+            name: self.config.name,
+            next: next,
+            deleteMessage: function(cb) {
+              return self.deleteMessage(message.ReceiptHandle, cb);
+            },
+            delay: function(timeout, cb) {
+              return self.changeMessageVisibility(message.ReceiptHandle, timeout, cb);
+            },
+            changeMessageVisibility: function(timeout, cb) {
+              return self.changeMessageVisibility(message.ReceiptHandle, timeout, cb);
+            }
+          });
+        }, function() {
+          return next(null);
+        });
+      }
+    ], function(err) {
+      if (err) {
+        self.emit.apply(self, ["error"].concat(__slice.call(arguments)));
+      }
+      return process.nextTick(function() {
+        return readQueue(index);
+      });
+    });
+  };
+  this.addListener('newListener', function(name) {
+    if (name !== 'message') {
+      return;
+    }
+    if (self.config.debug) {
+      console.info("SqsQueueParallel " + self.config.name + ": new listener");
+    }
+    if (!this.client || this.listeners("message").length === 1) {
+      return this.connect(function(err) {
+        if (err || !self.url || !self.listeners("message").length) {
+          return;
+        }
+        return _.times(self.config.concurrency || 1, function(index) {
+          return readQueue(index);
+        });
+      });
+    }
+  });
+  if (this.config.debug) {
+    this.on('connection', function(urls) {
+      return console.log("SqsQueueParallel: connection to SQS", urls);
+    });
+    this.on('connect', function() {
+      return console.log("SqsQueueParallel " + self.config.name + ": connected with url `" + self.url + "`");
+    });
+    this.on('error', function(e) {
+      return console.log("SqsQueueParallel " + self.config.name + ": connection failed", e);
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sqs-queue-parallel.EventEmitter" id="apidoc.element.sqs-queue-parallel.EventEmitter">
+        function <span class="apidocSignatureSpan">sqs-queue-parallel.</span>EventEmitter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sqs-queue-parallel.configure" id="apidoc.element.sqs-queue-parallel.configure">
+        function <span class="apidocSignatureSpan">sqs-queue-parallel.</span>configure
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">configure = function (config) {
+  if (config == null) {
+    config = {};
+  }
+  return globalConfig = _.extend(globalConfig, config);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sqs-queue-parallel.init" id="apidoc.element.sqs-queue-parallel.init">
+        function <span class="apidocSignatureSpan">sqs-queue-parallel.</span>init
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function () {
+  this.domain = null;
+  if (EventEmitter.usingDomains) {
+    // if there is an active domain, then attach to it.
+    domain = domain || require('domain');
+    if (domain.active &amp;&amp; !(this instanceof domain.Domain)) {
+      this.domain = domain.active;
+    }
+  }
+
+  if (!this._events || this._events === Object.getPrototypeOf(this)._events) {
+    this._events = new EventHandlers();
+    this._eventsCount = 0;
+  }
+
+  this._maxListeners = this._maxListeners || undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sqs-queue-parallel.listenerCount" id="apidoc.element.sqs-queue-parallel.listenerCount">
+        function <span class="apidocSignatureSpan">sqs-queue-parallel.</span>listenerCount
+        <span class="apidocSignatureSpan">(emitter, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listenerCount = function (emitter, type) {
+  if (typeof emitter.listenerCount === 'function') {
+    return emitter.listenerCount(type);
+  } else {
+    return listenerCount.call(emitter, type);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sqs-queue-parallel.toString" id="apidoc.element.sqs-queue-parallel.toString">
+        function <span class="apidocSignatureSpan">sqs-queue-parallel.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sqs-queue-parallel.configure" id="apidoc.module.sqs-queue-parallel.configure">module sqs-queue-parallel.configure</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sqs-queue-parallel.configure.configure" id="apidoc.element.sqs-queue-parallel.configure.configure">
+        function <span class="apidocSignatureSpan">sqs-queue-parallel.</span>configure
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">configure = function (config) {
+  if (config == null) {
+    config = {};
+  }
+  return globalConfig = _.extend(globalConfig, config);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sqs-queue-parallel.init" id="apidoc.module.sqs-queue-parallel.init">module sqs-queue-parallel.init</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sqs-queue-parallel.init.init" id="apidoc.element.sqs-queue-parallel.init.init">
+        function <span class="apidocSignatureSpan">sqs-queue-parallel.</span>init
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function () {
+  this.domain = null;
+  if (EventEmitter.usingDomains) {
+    // if there is an active domain, then attach to it.
+    domain = domain || require('domain');
+    if (domain.active &amp;&amp; !(this instanceof domain.Domain)) {
+      this.domain = domain.active;
+    }
+  }
+
+  if (!this._events || this._events === Object.getPrototypeOf(this)._events) {
+    this._events = new EventHandlers();
+    this._eventsCount = 0;
+  }
+
+  this._maxListeners = this._maxListeners || undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sqs-queue-parallel.listenerCount" id="apidoc.module.sqs-queue-parallel.listenerCount">module sqs-queue-parallel.listenerCount</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sqs-queue-parallel.listenerCount.listenerCount" id="apidoc.element.sqs-queue-parallel.listenerCount.listenerCount">
+        function <span class="apidocSignatureSpan">sqs-queue-parallel.</span>listenerCount
+        <span class="apidocSignatureSpan">(emitter, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listenerCount = function (emitter, type) {
+  if (typeof emitter.listenerCount === 'function') {
+    return emitter.listenerCount(type);
+  } else {
+    return listenerCount.call(emitter, type);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sqs-queue-parallel.toString" id="apidoc.module.sqs-queue-parallel.toString">module sqs-queue-parallel.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sqs-queue-parallel.toString.toString" id="apidoc.element.sqs-queue-parallel.toString.toString">
+        function <span class="apidocSignatureSpan">sqs-queue-parallel.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
